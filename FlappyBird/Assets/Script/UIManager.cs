@@ -15,7 +15,33 @@ public class UIManager : Singleton<UIManager>
     [SerializeField]
     private NumbersRenderer _numbersRenderer = null;
 
-    public int Score { set { _numbersRenderer.value = value; } }
+    [SerializeField]
+    private GameOverPopup _gameOverPopup = null; 
+
+    public int Score { set {
+            _numbersRenderer.value = value;
+        } }
+
+    private void Start()
+    {
+        Init();
+        ShowTitle();
+    }
+
+    public void Init()
+    {
+        _title.gameObject.SetActive(false);
+        _startButton.gameObject.SetActive(false);
+        _tipButton.gameObject.SetActive(false);
+        _gameOverPopup.gameObject.SetActive(false);
+        _numbersRenderer.gameObject.SetActive(false);
+    }
+
+    public void ShowTitle()
+    {
+        _title.gameObject.SetActive(true);
+        _startButton.gameObject.SetActive(true);
+    }
 
     public void StartButton()
     {
@@ -38,8 +64,14 @@ public class UIManager : Singleton<UIManager>
         _tipButton.gameObject.SetActive(true);
     }
 
-    private void ShowScore()
+    public void ShowScore()
     {
+        _numbersRenderer.value = 0;
         _numbersRenderer.gameObject.SetActive(true);
+    }
+
+    public void InvokeGameOver()
+    {
+        _gameOverPopup.Show();
     }
 }

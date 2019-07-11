@@ -20,7 +20,7 @@ public class Bird : MonoBehaviour, IGameObject
     {
         _rigidbody.constraints = value ? RigidbodyConstraints2D.FreezePositionY : RigidbodyConstraints2D.None;
     }
-
+     
     public void GameUpdate()
     {
         if(Input.GetKeyDown(KeyCode.Mouse0))
@@ -37,6 +37,7 @@ public class Bird : MonoBehaviour, IGameObject
         switch(collision.gameObject.tag)
         {
             case "Enemy":
+                Manager.Instance.isPlay = false;
                 break;
         }
     }
@@ -47,3 +48,4 @@ public class Bird : MonoBehaviour, IGameObject
         
     }
 }
+ 

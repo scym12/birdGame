@@ -30,15 +30,48 @@ public class Manager : Singleton<Manager>
 
     private bool _bPlay = false;
     private int _score = 0;
-    public bool isPlay { get { return _bPlay; } set { _bPlay = value; } }
+    public bool isPlay {
+        get { return _bPlay; }
+        set {
+            _bPlay = value;
+            if( !_bPlay )
+            {
+                UIManager.Instance.InvokeGameOver();
+            }
+        }
+    }
 
-    public float Speed {  get { return _speed; } }
+    public float Speed { get { return _speed; } }
 
+    public void Replay()
+    {
+        Init();
+        UIManager.Instance.ShowScore();
+        _bPlay = true;
+    }
+
+    private void Init()
+    {
+        _bPlay = false;
+        _score = 0;
+        _currentTime = 0.0f;
+        _bird.transform.position = new Vector3(-2.29f, 0.6f, 0);
+        _ground.transform.position = new Vector3(0.05f, -4.58f, 0);
+        foreach (Pipe pipe in _pipeList)
+        {
+            Destroy(pipe.gameObject);
+        }
+        _pipeList.Clear();
+
+        UIManager.Instance.Init();
+
+    }
 
 
     private void Start()
     {
-        _bPlay = false;
+        Init();
+        UIManager.Instance.ShowTitle();
     }
 
     // Update is called once per frame
