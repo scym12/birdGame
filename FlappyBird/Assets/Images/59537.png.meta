@@ -37,7 +37,7 @@ TextureImporter:
     second: 59537_10
   - first:
       213: 8716607475817824936
-    second: 59537_11
+    second: SMALL_NUM_0
   - first:
       213: -8024419188626649139
     second: 59537_12
@@ -124,19 +124,19 @@ TextureImporter:
     second: 59537_39
   - first:
       213: 621704068633711458
-    second: 59537_40
+    second: SMALL_NUM_6
   - first:
       213: -5125601329468632929
-    second: 59537_41
+    second: SMALL_NUM_7
   - first:
       213: -6844224239019392560
     second: 59537_42
   - first:
       213: -8515468343391247466
-    second: 59537_43
+    second: SMALL_NUM_8
   - first:
       213: -1651308538327852907
-    second: 59537_44
+    second: SMALL_NUM_9
   - first:
       213: 212803992275278667
     second: 59537_45
@@ -169,16 +169,22 @@ TextureImporter:
     second: 59537_NUM9
   - first:
       213: 9034663829084771129
-    second: 59537_55
+    second: SMALL_NUM_2
   - first:
       213: 6044444775514927792
-    second: 59537_56
+    second: SMALL_NUM_3
   - first:
       213: 7897653351398487911
-    second: 59537_57
+    second: SMALL_NUM_4
   - first:
       213: -511490223659290819
-    second: 59537_58
+    second: SMALL_NUM_5
+  - first:
+      213: 8716607475817824936
+    second: 59537_11
+  - first:
+      213: -399863513246027579
+    second: SMALL_NUM_1
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -235,7 +241,7 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - serializedVersion: 3
+  - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -246,8 +252,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 2
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -258,8 +263,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 2
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -270,7 +274,6 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -506,7 +509,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 59537_11
+      name: SMALL_NUM_0
       rect:
         serializedVersion: 2
         x: 287
@@ -1115,7 +1118,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 59537_40
+      name: SMALL_NUM_6
       rect:
         serializedVersion: 2
         x: 284
@@ -1136,7 +1139,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 59537_41
+      name: SMALL_NUM_7
       rect:
         serializedVersion: 2
         x: 292
@@ -1178,7 +1181,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 59537_43
+      name: SMALL_NUM_8
       rect:
         serializedVersion: 2
         x: 284
@@ -1199,7 +1202,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 59537_44
+      name: SMALL_NUM_9
       rect:
         serializedVersion: 2
         x: 292
@@ -1430,7 +1433,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 59537_55
+      name: SMALL_NUM_2
       rect:
         serializedVersion: 2
         x: 204
@@ -1451,7 +1454,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 59537_56
+      name: SMALL_NUM_3
       rect:
         serializedVersion: 2
         x: 212
@@ -1472,7 +1475,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 59537_57
+      name: SMALL_NUM_4
       rect:
         serializedVersion: 2
         x: 220
@@ -1493,7 +1496,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 59537_58
+      name: SMALL_NUM_5
       rect:
         serializedVersion: 2
         x: 228
@@ -1509,6 +1512,48 @@ TextureImporter:
       bones: []
       spriteID: 35deaae560ee0fe4aa75618b48aa9f55
       internalID: -511490223659290819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 59537_11
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 101
+        width: 6
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8444b398e2ee7724dbf7af653280535d
+      internalID: 8716607475817824936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SMALL_NUM_1
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 87
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a56bf2c6ec8468e42bc7d25f3cec212b
+      internalID: -399863513246027579
       vertices: []
       indices: 
       edges: []

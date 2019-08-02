@@ -30,6 +30,13 @@ public class Manager : Singleton<Manager>
 
     private bool _bPlay = false;
     private int _score = 0;
+    private int _highScore = 0;
+    private bool _bCurrentHighScore = false;
+
+    public int Score {  get { return _score;  } }
+    public int HighScore {  get { return _highScore;  } }
+    public bool iscurrentBestScore {  get { return _bCurrentHighScore;  } }
+
     public bool isPlay {
         get { return _bPlay; }
         set {
@@ -52,6 +59,8 @@ public class Manager : Singleton<Manager>
 
     private void Init()
     {
+        Debug.Log("Init:" + _bCurrentHighScore);
+        _bCurrentHighScore = false;
         _bPlay = false;
         _score = 0;
         _currentTime = 0.0f;
@@ -72,6 +81,7 @@ public class Manager : Singleton<Manager>
     {
         Init();
         UIManager.Instance.ShowTitle();
+        _highScore = PlayerPrefs.GetInt("_bestScore");
     }
 
     // Update is called once per frame
@@ -131,14 +141,24 @@ public class Manager : Singleton<Manager>
     public void Remove(Pipe target)
     {
         _pipeDelete.Add(target);
-        // _pipeList.Remove(target);
-        // Destroy(target.gameObject);
         
     }
 
+    // 
     private void InvokeScore() 
     {
         _score++;
+        if(_highScore < _score)
+        {
+            Debug.Log("InvokeScore:" + _bCurrentHighScore);
+
+            _bCurrentHighScore = true;
+            _highScore = _score;
+
+            PlayerPrefs.SetInt("_bestScore", _highScore);
+            PlayerPrefs.Save();
+        }
+
         UIManager.Instance.Score = _score;
         Debug.Log(_score);
 

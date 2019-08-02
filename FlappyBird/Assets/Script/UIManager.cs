@@ -16,6 +16,10 @@ public class UIManager : Singleton<UIManager>
     private NumbersRenderer _numbersRenderer = null;
 
     [SerializeField]
+    private GameObject _bestScore = null;
+
+
+    [SerializeField]
     private GameOverPopup _gameOverPopup = null; 
 
     public int Score { set {
@@ -73,5 +77,7 @@ public class UIManager : Singleton<UIManager>
     public void InvokeGameOver()
     {
         _gameOverPopup.Show();
+        _numbersRenderer.gameObject.SetActive(false);
+        _bestScore.gameObject.SetActive(false);
     }
 }
