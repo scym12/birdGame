@@ -15,9 +15,6 @@ public class UIManager : Singleton<UIManager>
     [SerializeField]
     private NumbersRenderer _numbersRenderer = null;
 
-    [SerializeField]
-    private GameObject _bestScore = null;
-
 
     [SerializeField]
     private GameOverPopup _gameOverPopup = null; 
@@ -78,6 +75,5 @@ public class UIManager : Singleton<UIManager>
     {
         _gameOverPopup.Show();
         _numbersRenderer.gameObject.SetActive(false);
-        _bestScore.gameObject.SetActive(false);
     }
 }
