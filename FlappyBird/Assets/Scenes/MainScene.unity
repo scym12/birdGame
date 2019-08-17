@@ -740,7 +740,7 @@ Animator:
   m_GameObject: {fileID: 365543381}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 659a821848c1f034b8e72f5a9d48de12, type: 2}
+  m_Controller: {fileID: 9100000, guid: bb5b669758f6a0745b634febab2bea2b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -786,7 +786,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 1e1f32149a31dde4d809da9cf5c47b1b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5394e2443d6a0d34399fb4e8b988c2cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2512,7 +2512,6 @@ MonoBehaviour:
   _startButton: {fileID: 219477078}
   _tipButton: {fileID: 313740904}
   _numbersRenderer: {fileID: 692069469}
-  _bestScore: {fileID: 79341578}
   _gameOverPopup: {fileID: 1170254908}
 --- !u!114 &1710898954
 MonoBehaviour:
