@@ -17,6 +17,7 @@ public class MoveObject : MonoBehaviour, IGameObject
     private void Move()
     {
         Vector3 pos = transform.position;
+        Debug.Log(Manager.Instance.Speed);
         pos.x -= Manager.Instance.Speed;
         if (pos.x < _endPositionX)
         {
@@ -33,6 +34,7 @@ public class MoveObject : MonoBehaviour, IGameObject
 
     virtual protected void FinishEndPosition()
     {
+        Debug.Log("Findish");
         transform.position = new Vector3(_startPositionX, transform.position.y, 0);
     }
 }

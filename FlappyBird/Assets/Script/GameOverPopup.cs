@@ -23,7 +23,7 @@ public class GameOverPopup : MonoBehaviour
 
         Debug.Log("bestScore:" + Manager.Instance.iscurrentBestScore);
 
-        _newBestScore.SetActive(true);
+        // _newBestScore.SetActive(true);
     }
 
     public void OkButton()

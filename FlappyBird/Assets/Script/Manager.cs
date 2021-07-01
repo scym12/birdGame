@@ -7,6 +7,8 @@ public class Manager : Singleton<Manager>
 
     [SerializeField]
     private Bird _bird = null;
+
+    private Rigidbody2D bird_rigid;
     [SerializeField]
     private Ground _ground = null;
     [SerializeField]
@@ -17,6 +19,10 @@ public class Manager : Singleton<Manager>
 
     [SerializeField]
     private float _createTime = 4.0f;
+
+    [SerializeField]
+    private Transform startPos;
+
 
     private float _currentTime = 0.0f;
 
@@ -64,7 +70,15 @@ public class Manager : Singleton<Manager>
         _bPlay = false;
         _score = 0;
         _currentTime = 0.0f;
-        _bird.transform.position = new Vector3(-2.29f, 0.6f, 0);
+//        _bird.transform.position = new Vector3(-2.29f, 0.6f, 0);
+        _bird.transform.rotation = Quaternion.Euler(Vector3.zero);
+        bird_rigid.velocity = Vector3.zero;
+        bird_rigid.angularVelocity = 0.0f;
+
+        Vector3 vec = Camera.main.ScreenToWorldPoint(startPos.position);
+        vec.z = 0;
+        _bird.transform.position = vec;
+
         _ground.transform.position = new Vector3(0.05f, -4.58f, 0);
         foreach (Pipe pipe in _pipeList)
         {
@@ -74,14 +88,18 @@ public class Manager : Singleton<Manager>
 
         UIManager.Instance.Init();
 
+
     }
 
 
     private void Start()
     {
+        bird_rigid = _bird.GetComponent<Rigidbody2D>();
         Init();
         UIManager.Instance.ShowTitle();
         _highScore = PlayerPrefs.GetInt("_bestScore");
+        initPipe();
+
     }
 
     // Update is called once per frame
@@ -93,7 +111,9 @@ public class Manager : Singleton<Manager>
             _currentTime += Time.deltaTime;
             if(_createTime < _currentTime)
             {
-                Pipe tmp = GameObject.Instantiate(_pipe);
+                Pipe tmp = getPipe();
+                    // tmp = GameObject.Instantiate(_pipe);
+
                 _currentTime = 0.0f;
                 //tmp.SetHeight(Random.Range(0.0f, _pipeRandomHeight));
                 tmp.SetPositionY(Random.Range(0.0f, _pipeRandomPositionY));
@@ -117,11 +137,37 @@ public class Manager : Singleton<Manager>
             }
             );
 
-            UpdateRemove();
+            // UpdateRemove();
 
             // _pipe.GameUpdate();
         }
 
+    }
+
+    void initPipe()
+    {
+        for(int i=0;i<3;i++)
+        {
+            
+            Pipe pipe = GameObject.Instantiate(_pipe);
+            pipe.gameObject.SetActive(false);
+            _pipeDelete.Add(pipe);
+
+        }
+    }
+
+    Pipe getPipe()
+    {
+        if (_pipeDelete.Count > 0)
+        {
+            foreach (Pipe pipe in _pipeDelete)
+            {
+                _pipeDelete.Remove(pipe);
+                pipe.gameObject.SetActive(true);
+                return pipe;
+            }
+        }
+        return GameObject.Instantiate(_pipe); ;
     }
 
     void UpdateRemove()
@@ -140,8 +186,11 @@ public class Manager : Singleton<Manager>
 
     public void Remove(Pipe target)
     {
+        target.gameObject.SetActive(false);
         _pipeDelete.Add(target);
-        
+        _pipeList.Remove(target);
+
+
     }
 
     // 

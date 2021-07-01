@@ -19,10 +19,13 @@ public class Pipe : MoveObject
     // pipe 의 y
     private float _defaultBasePositionY = 0.0f;
 
+    private float _defaultX;
+
     private bool _bCheck = false;
 
     public void SetLocation()
     {
+        _bCheck = false;
         float tmp = 0;
         float up_min = 2.5f;
         float up_max = 8f;
@@ -50,9 +53,15 @@ public class Pipe : MoveObject
         topPipe.y = up_x;
         downPipe.y = down_x;
 
+        // topPipe.x = downPipe.x = _startPositionX;
+
         _topPipe.transform.localPosition = topPipe;
         _downpPipe.transform.localPosition = downPipe;
 
+
+        Vector3 p = gameObject.transform.position;
+        p.x = _startPositionX;
+        gameObject.transform.position = p;
     }
 
     // Start is called before the first frame update
@@ -91,7 +100,6 @@ public class Pipe : MoveObject
 
     override protected void FinishEndPosition()
     {
-        Debug.Log("Remove Object");
         Manager.Instance.Remove(this);
     }
 

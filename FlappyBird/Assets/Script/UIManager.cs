@@ -11,6 +11,8 @@ public class UIManager : Singleton<UIManager>
     private Button _startButton = null;
     [SerializeField]
     private Button _tipButton = null;
+    [SerializeField]
+    private GameObject _tipButton2 = null;
 
     [SerializeField]
     private NumbersRenderer _numbersRenderer = null;
@@ -34,6 +36,7 @@ public class UIManager : Singleton<UIManager>
         _title.gameObject.SetActive(false);
         _startButton.gameObject.SetActive(false);
         _tipButton.gameObject.SetActive(false);
+        _tipButton2.SetActive(false);
         _gameOverPopup.gameObject.SetActive(false);
         _numbersRenderer.gameObject.SetActive(false);
     }
@@ -57,12 +60,15 @@ public class UIManager : Singleton<UIManager>
         ShowScore();
         Manager.Instance.isPlay = true;
         _tipButton.gameObject.SetActive(false);
-        
+        _tipButton2.SetActive(false);
+
+
     }
 
     private void ShowTipButton()
     {
         _tipButton.gameObject.SetActive(true);
+        _tipButton2.SetActive(true);
     }
 
     public void ShowScore()
