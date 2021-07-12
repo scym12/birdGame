@@ -18,7 +18,7 @@ public class MoveObject : MonoBehaviour, IGameObject
     {
         Vector3 pos = transform.position;
         Debug.Log(Manager.Instance.Speed);
-        pos.x -= Manager.Instance.Speed;
+        pos.x -= (Manager.Instance.Speed * Time.deltaTime);
         if (pos.x < _endPositionX)
         {
             FinishEndPosition();
